@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { StoreProvider } from "easy-peasy";
 import { store } from "./store/StoreFront";
 import "./index.sass"
+import App from "App";
 
 ReactDOM.render(
   <React.StrictMode>
