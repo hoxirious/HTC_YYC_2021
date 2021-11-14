@@ -8,3 +8,5 @@ export const scopes = [
   "user-read-currently-playing",
   "user-read-playback-state",
 ];
+export const token =
+  "BQDX2QIXOIf4wteZ76zUhicMCd29GhiExs2T6OI6iAbuVjtHUk0nBrCBUe-tbpqRIM5NO5uTEC8ESNOL4EwF4q0lk6kSoHU9xLLlTj1LcxTYolrvjUNfD9BrkwfA3bXL866j8DVsH-R0ec4OLTVSDqAsjf0SU5ZseqUbhnBLTZDpxUMsAA";

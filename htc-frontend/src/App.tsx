@@ -1,13 +1,11 @@
-import { authEndpoint, clientId, redirectUri, scopes } from 'apis/data/config';
-import { sendRequest } from 'apis/utils/api.util';
+import { clientId, redirectUri } from 'apis/data/config';
 import axios from 'axios';
 import { Main } from 'components/Main';
 import { Navbar } from 'components/Navbar';
-import Player, { PlayerProps } from 'components/Player';
-import { WebcamCapture } from 'components/WebcamCapture';
-import React, { useCallback, useEffect, useState } from 'react';
+import Player from 'components/Player';
+import React, { useCallback, useState } from 'react';
+import { useStoreState } from 'stores/StoreFront';
 import './App.sass';
-import logo from './logo.svg';
 
 export interface ItemProps {
   item: {
@@ -68,8 +66,9 @@ export const getToken = async (): Promise<string> => {
 function App() {
   const [token, setToken] = useState<string>("");
   // const [no_data, set_no_data] = useState<boolean>(false);
-  const [response, setResponse] = useState<PlayerProps>();
-
+  const emotion = useStoreState((store) => {
+    return store.emotionModel.emotion;
+  });
   const getCurrentlyPlaying = async (token: string) => {
     // Make a call using the token
     const result = fetchCurrentPlaying();
@@ -88,25 +87,17 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Navbar />
-        <Main />
-        <a
+        {emotion === "" && <Main />}
+        {/* <a
           className="btn btn--loginApp-link"
           href={`${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join("%20")}&response_type=token&show_dialog=true`}
         >``
           Login to Spotify
-        </a>
-        {token && response && (
-          <Player
-            item={response?.item}
-            is_playing={response?.is_playing}
-            progress_ms={response?.progress_ms}
-          />
-        )}
-        {/* {no_data && (
-            <p>
-              You need to be playing a song on Spotify, for something to appear here.
-            </p>
-          )} */}
+        </a> */}
+        {
+          emotion !== "" &&
+          <Player />
+        }
       </header>
     </div>
   );

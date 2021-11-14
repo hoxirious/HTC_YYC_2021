@@ -1,12 +1,12 @@
 import { createStore, createTypedHooks } from "easy-peasy";
-import { tableModel, TableModel } from "./misc/table.store";
+import { emotionModel, EmotionModel } from "./misc/emotion.store";
 
 export interface StoreModel {
-  tableModel: TableModel;
+  emotionModel: EmotionModel;
 }
 
 export const model: StoreModel = {
-  tableModel,
+  emotionModel,
 };
 
 export const store = createStore(model);
