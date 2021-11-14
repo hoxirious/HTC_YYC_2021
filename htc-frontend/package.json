@@ -12,6 +12,7 @@
     "@types/react-dom": "^17.0.0",
     "axios": "^0.24.0",
     "easy-peasy": "^5.0.4",
+    "form-data": "^4.0.0",
     "hash": "^0.2.1",
     "node-sass": "^5.0.0",
     "react": "^17.0.2",

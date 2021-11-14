@@ -1,6 +1,8 @@
 import { authEndpoint, clientId, redirectUri, scopes } from 'apis/data/config';
 import { sendRequest } from 'apis/utils/api.util';
 import axios from 'axios';
+import { Main } from 'components/Main';
+import { Navbar } from 'components/Navbar';
 import Player, { PlayerProps } from 'components/Player';
 import { WebcamCapture } from 'components/WebcamCapture';
 import React, { useCallback, useEffect, useState } from 'react';
@@ -82,17 +84,15 @@ function App() {
   }, [token]);
 
 
-
-
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        {/* <WebcamCapture /> */}
+        <Navbar />
+        <Main />
         <a
           className="btn btn--loginApp-link"
-          href={`${authEndpoint}client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join("%20")}&response_type=token&show_dialog=true`}
-        >
+          href={`${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join("%20")}&response_type=token&show_dialog=true`}
+        >``
           Login to Spotify
         </a>
         {token && response && (
