@@ -1,3 +1,48 @@
+// import React, { useState } from "react";
+// import Webcam from "react-webcam";
+
+// const videoConstraints = {
+//   width: 1280,
+//   height: 720,
+//   facingMode: "user",
+// };
+
+// export const WebcamCapture = () => {
+//   const [image, setImage] = useState("");
+//   const webcamRef = React.useRef(null);
+
+//   const capture = React.useCallback(() => {
+//     const imageSrc = webcamRef.current.getScreenshot();
+//     setImage(imageSrc);
+//     console.log(imageSrc);
+//   }, [webcamRef]);
+
+//     return (
+//       <>
+//         <div className="webcam-container">
+//           <div className="webcam-img">
+//             {/* {image === "" ? (
+//               <> */}
+//                 <Webcam
+//                   audio={false}
+//                   ref={webcamRef}
+//                   height={400}
+//                   width={800}
+//                   screenshotFormat="image/jpeg"
+//                   videoConstraints={videoConstraints}
+//                 />
+//                 <button onClick={capture}>Capture photo</button>
+//               {/* </> */}
+//             {/* )  */}
+//             {/* : (
+//               <img src={image} />
+//             )} */}
+//           </div>
+//         </div>
+//       </>
+//     );
+
+// };
 import React from "react";
 import Webcam from "react-webcam";
 
