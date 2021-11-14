@@ -87,13 +87,12 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {/* <Navbar /> */}
-        {/* <Main /> */}
-        <WebcamCapture/>
+        <Navbar />
+        <Main />
         <a
           className="btn btn--loginApp-link"
           href={`${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join("%20")}&response_type=token&show_dialog=true`}
-        >
+        >``
           Login to Spotify
         </a>
         {token && response && (

@@ -1,4 +1,4 @@
-// import "./Navbar.sass";
+import "./Navbar.sass";
 export const Navbar = () => {
 
     return (

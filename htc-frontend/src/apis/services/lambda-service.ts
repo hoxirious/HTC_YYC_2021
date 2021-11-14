@@ -1,12 +1,9 @@
 import axios from "axios";
 
-const form = new FormData();
-form.append("productImage", "./Documents/", "stickers.jpg");
-// Pass image stream from response directly to form
-
-export const postImage = async (form: FormData) => {
-  const response = await axios.post("https://example.com", form, {
-    headers: {
-    },
-  });
+export const postImage = async (image: string): Promise<string> => {
+  const response = await axios.post(
+    "https://7qp66ux023.execute-api.us-west-1.amazonaws.com/beta/get-emo",
+    { image: image },
+  );
+  return response.data.body.maxEmo;
 };
