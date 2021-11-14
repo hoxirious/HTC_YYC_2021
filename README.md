@@ -3,7 +3,7 @@ Hack The Change YYC - 2021
 
 ## Inspiration
 
-Listening to music can be entertaining, and some research suggests that it might even make you healthier. Music can be a source of pleasure and contentment, but there are many other psychological benefits as well. Music can relax the mind, energize the body, and even help people better manage pain. Music can impact one's mood and emotion significantly through acting as a mood regulator, source of safety and comfort, and stress reducer
+Listening to music can be entertaining, and some research suggests that it might even make you healthier. Music can be a source of pleasure and contentment, but there are many other psychological benefits as well. Music can relax the mind, energize the body, and even help people better manage pain. Music can impact one's mood and emotion significantly through acting as a mood regulator, source of safety and comfort, and stress reducer.
 
 
 
