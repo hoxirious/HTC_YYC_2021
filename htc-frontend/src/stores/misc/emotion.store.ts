@@ -1,4 +1,4 @@
-import { action, Action, thunk, Thunk } from "easy-peasy";
+import { action, Action } from "easy-peasy";
 
 
 interface EmotionState {
@@ -10,8 +10,6 @@ interface EmotionAction {
 }
 
 interface EmotionThunk {
-  // callService: Thunk<EmotionModel, never, any, EmotionModel, Promise<void>>;
-  // fetchService: Thunk<EmotionModel, string, any, Promise<void>>;
 }
 
 export interface EmotionModel
@@ -28,15 +26,4 @@ export const emotionModel: EmotionModel = {
     state.emotion = emo;
   })
 
-  // *Thunk
-  // callService: thunk(async (actions, _) => {
-  //   try {
-  //     action.setEmotion(postMessage());
-  //   } catch (error) {
-  //     console.error("Cannot fetch services info");
-  //   }
-  // }),
-  // fetchService: thunk(async (action, payload) => {
-  //   action.setService(payload);
-  // }),
 };

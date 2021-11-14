@@ -22,7 +22,7 @@ export const  WebcamCapture =  () => {
     setImage(imageSrc);
     const result = await postImage(imageSrc);
     setEmotion(result);
-  }, [webcamRef]);
+  }, [webcamRef, setEmotion]);
 
   return (
     <>

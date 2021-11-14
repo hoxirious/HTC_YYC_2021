@@ -1,5 +1,4 @@
-import { postImage } from "apis/services/lambda-service";
-import "./Main.sass"
+import "./Main.sass";
 import { WebcamCapture } from "./WebcamCapture";
 
 export const Main = () => {

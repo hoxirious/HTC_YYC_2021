@@ -1,10 +1,9 @@
-import { ItemProps } from "App";
-import React from "react";
-import "./Player.sass";
 import { token } from "apis/data/config";
-import { useStoreState } from "stores/StoreFront";
 import { getPlaylist } from "data/emotionMapper";
+import React from "react";
 import SpotifyPlayer from "react-spotify-player";
+import { useStoreState } from "stores/StoreFront";
+import "./Player.sass";
 
 const Player = () => {
   const size = {
