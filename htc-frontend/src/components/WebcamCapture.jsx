@@ -1,6 +1,7 @@
+import { postImage } from "apis/services/lambda-service";
 import React, { useState } from "react";
 import Webcam from "react-webcam";
-import { postImage } from "apis/services/lambda-service";
+import { useStoreActions } from "stores/StoreFront";
 
 const videoConstraints = {
   width: 1280,
@@ -8,15 +9,19 @@ const videoConstraints = {
   facingMode: "user",
 };
 
-export const WebcamCapture = () => {
+export const  WebcamCapture =  () => {
+  const setEmotion = useStoreActions((actions) => {
+    return actions.emotionModel.setEmotion;
+  });
+
   const [image, setImage] = useState("");
   const webcamRef = React.useRef(null);
 
-  const capture = React.useCallback(() => {
+  const capture = React.useCallback( async () => {
     const imageSrc = webcamRef.current.getScreenshot();
     setImage(imageSrc);
-    const result = postImage(imageSrc);
-    console.log(result);
+    const result = await postImage(imageSrc);
+    setEmotion(result);
   }, [webcamRef]);
 
   return (
@@ -32,7 +37,9 @@ export const WebcamCapture = () => {
               screenshotFormat="image/jpeg"
               videoConstraints={videoConstraints}
             />
-            <button className="capture-button" onClick={capture}>Capture</button>
+            <button className="capture-button" onClick={capture}>
+              Capture
+            </button>
           </>
         ) : (
           <img src={image} />

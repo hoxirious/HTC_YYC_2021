@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
 import { StoreProvider } from "easy-peasy";
-import { store } from "./store/StoreFront";
+import { store } from "stores/StoreFront";
 import "./index.sass"
 import App from "App";
 
