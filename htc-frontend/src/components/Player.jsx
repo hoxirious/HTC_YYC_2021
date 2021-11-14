@@ -1,4 +1,3 @@
-import { token } from "apis/data/config";
 import { getPlaylist } from "data/emotionMapper";
 import React from "react";
 import SpotifyPlayer from "react-spotify-player";
@@ -22,7 +21,6 @@ const Player = () => {
       {emotion && (
         <SpotifyPlayer
           autoPlay={true}
-          token={token}
           uri={playlist}
           size={size}
           view={view}
