@@ -6,7 +6,7 @@ export const emotionMap = {
   HAPPY: "37i9dQZF1DXdPec7aLTmlC",
   SAD: "6nxPNnmSE0d5WlplUsa5L3",
   CALM: "6IKQrtMc4c00YzONcUt7QH",
-  ANGRY: "5YXayFcof9h8GnuPJCNZig",
+  ANGRY: "6zi7YF4FPL27vmPDlOzD43",
   CONFUSED: "43XObCYwWhKwv5hdQRnua4",
   DISGUSTED: "6aeg0C0VgdFFLr6bZZvxDp",
   SUPRISED: "56ECBy7myR2MrJA6WUQTSf",
