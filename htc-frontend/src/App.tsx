@@ -2,6 +2,7 @@ import { authEndpoint, clientId, redirectUri, scopes } from 'apis/data/config';
 import { sendRequest } from 'apis/utils/api.util';
 import axios from 'axios';
 import Player, { PlayerProps } from 'components/Player';
+import { WebcamCapture } from 'components/WebcamCapture';
 import React, { useCallback, useEffect, useState } from 'react';
 import './App.sass';
 import logo from './logo.svg';
@@ -87,6 +88,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        {/* <WebcamCapture /> */}
         <a
           className="btn btn--loginApp-link"
           href={`${authEndpoint}client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join("%20")}&response_type=token&show_dialog=true`}
