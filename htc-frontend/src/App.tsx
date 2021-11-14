@@ -17,9 +17,9 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Navbar />
-        {emotion === "" && <Main />}
+        {emotion === "UNKNOWN" && <Main />}
         {
-          emotion !== "" &&
+          emotion !== "UNKNOWN" &&
           <Player />
         }
       </header>

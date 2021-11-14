@@ -6,22 +6,21 @@ import "./Player.sass";
 
 const Player = () => {
   const size = {
-    width: "100%",
+    width: "50%",
     height: 300,
   };
-  const view = "list"; // or 'coverart'
-  const theme = "black"; // or 'white'
+  const view = "coverart"; // or 'coverart'
+  const theme = "white"; // or 'white'
   const emotion = useStoreState((store) => {
     return store.emotionModel.emotion;
   });
-  const playlist = `spotify:playlist:${getPlaylist(emotion)}`;
+  const structured_playlist = `spotify:playlist:${getPlaylist(emotion)}`;
   return (
     <>
-      {console.log(emotion)}
       {emotion && (
         <SpotifyPlayer
           autoPlay={true}
-          uri={playlist}
+          uri={structured_playlist}
           size={size}
           view={view}
           theme={theme}

@@ -9,7 +9,7 @@ const videoConstraints = {
   facingMode: "user",
 };
 
-export const  WebcamCapture =  () => {
+export const WebcamCapture = () => {
   const setEmotion = useStoreActions((actions) => {
     return actions.emotionModel.setEmotion;
   });
@@ -17,7 +17,7 @@ export const  WebcamCapture =  () => {
   const [image, setImage] = useState("");
   const webcamRef = React.useRef(null);
 
-  const capture = React.useCallback( async () => {
+  const capture = React.useCallback(async () => {
     const imageSrc = webcamRef.current.getScreenshot();
     setImage(imageSrc);
     const result = await postImage(imageSrc);
@@ -28,23 +28,21 @@ export const  WebcamCapture =  () => {
     <>
       <div className="webcam-container">
         {image === "" ? (
-          <>
-            <Webcam
-              audio={false}
-              ref={webcamRef}
-              height={400}
-              width={800}
-              screenshotFormat="image/jpeg"
-              videoConstraints={videoConstraints}
-            />
-            <button className="capture-button" onClick={capture}>
-              Capture
-            </button>
-          </>
+          <Webcam
+            audio={false}
+            ref={webcamRef}
+            height={400}
+            width={800}
+            screenshotFormat="image/jpeg"
+            videoConstraints={videoConstraints}
+          />
         ) : (
           <img src={image} />
         )}
       </div>
+      <button className="capture-button" onClick={capture}>
+        Capture
+      </button>
     </>
   );
 };

@@ -1,16 +1,15 @@
+import { Emotion } from "data/emotionMapper";
 import { action, Action } from "easy-peasy";
 
-
 interface EmotionState {
-  emotion: string;
+  emotion: Emotion;
 }
 
 interface EmotionAction {
-  setEmotion: Action<EmotionModel, string>;
+  setEmotion: Action<EmotionModel, Emotion>;
 }
 
-interface EmotionThunk {
-}
+interface EmotionThunk {}
 
 export interface EmotionModel
   extends EmotionState,
@@ -19,11 +18,10 @@ export interface EmotionModel
 
 export const emotionModel: EmotionModel = {
   // *State
-  emotion: "",
+  emotion: "UNKNOWN",
 
   // *Action
-  setEmotion: action((state,emo) => {
+  setEmotion: action((state, emo) => {
     state.emotion = emo;
-  })
-
+  }),
 };
