@@ -1,7 +1,7 @@
-import "./Main.sass";
-import { WebcamCapture } from "./WebcamCapture";
+import "styles/views/MainManager.sass";
+import { WebcamCapture } from "../components/WebcamCapture";
 
-export const Main = () => {
+export const MainManager = () => {
 
     return (
         <div className="main">

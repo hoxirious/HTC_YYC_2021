@@ -1,6 +1,6 @@
-import { Main } from 'components/Main';
+import { MainManager } from 'views/MainManager';
 import { Navbar } from 'components/Navbar';
-import Player from 'components/Player';
+import {Radio} from 'components/Radio';
 import React from 'react';
 import { useStoreState } from 'stores/StoreFront';
 import './App.sass';
@@ -17,10 +17,10 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Navbar />
-        {emotion === "UNKNOWN" && <Main />}
+        {emotion === "UNKNOWN" && <MainManager />}
         {
           emotion !== "UNKNOWN" &&
-          <Player />
+          <Radio />
         }
       </header>
     </div>
