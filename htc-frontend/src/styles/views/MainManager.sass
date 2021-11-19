@@ -1,53 +1,57 @@
 @import "styles/utils/fonts.sass"
+@import "styles/utils/utils.sass"
 
-.main
-    position: absolute
-    width: 100%
-    height: 660px
-    top: 60px
-    background: #EEDDDD
-
-.title
-    position: absolute
-    text-align: left
-    width: 209px
-    height: 207px
-    left: 230px
-    top: 150px
-
-    font-family: Rum Raisin
-    font-style: normal
-    font-weight: normal
-    font-size: 60px
-    line-height: 65px
-
-    color: #264143
-
-.capture-button
-    display: flex
-    position: absolute
-    align-items: center
-    justify-content: center
-    color: #DE5499
-    font-size: 1.5rem
-    font-family: Roboto Slab
-    border-color: #DE5499
-    border: 0.25rem solid
-    border-radius: 0.5rem
-    background-color: transparent
-    width: 152px
-    height: 54px
-    left: 230px
-    z-index: 40
-    top: 430px
-    &:hover
-        background-color: #F2EBE9
-
-.webcam-container
-    position: absolute
-    width: 800px
-    height: 400px
-    right: 100px
-    top: 144px
-    border: 2px solid #DE5499
-    box-sizing: content-box
+.main-manager
+    @apply h-full w-full
+    @apply grid content-center justify-items-center
+    background-color: $color-pink
+    padding: $component-common-padding
+    >.main-content
+        @apply grid w-full
+        @screen sm
+            grid-template-columns: 1fr
+        @screen lg
+            grid-template-columns: 1fr 2fr
+        column-gap $component-common-gap
+        .main-content__left
+            @apply flex flex-col justify-center items-center
+            grid-column: 1
+            >.title
+                @apply text-4xl font-medium
+                @screen md
+                    width: 7rem
+                color: #264143
+                font-family: $font-secondary
+            >.capture-button
+                @apply flex justify-center items-center
+                @apply text-base border-4 rounded-lg
+                color: $color-primary
+                font-family: $font-common
+                border-color: $color-primary
+                background-color: transparent
+                width: $button-width
+                height: $button-height-primary
+                z-index: 40
+                &:hover
+                    background-color: $color-common
+        .main-content__right
+            @screen sm
+                grid-column: 1
+            @screen md
+                grid-column: 2
+            @apply flex justify-start
+            >.webcam-container
+                @apply relative box-border
+                @screen sm
+                    width: 400px
+                    height: 200px
+                @screen lg
+                    width: 600px
+                    height: 300px
+                z-index: 40
+    >.radio-content
+        @apply flex justify-center items-center
+        @screen sm
+            width: 400px
+        @screen lg
+            width: 600px

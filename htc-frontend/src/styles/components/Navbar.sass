@@ -1,21 +1,14 @@
+@import "styles/utils/utils.sass"
+@import "styles/utils/fonts.sass"
+
 .navbar
-    position: absolute
-    width: 100%
-    height: 60px
-    left: 0px
-    top: 0px
-    background: #F2EBE9
-.logo
-    position: absolute
-    width: 161px
-    height: 39px
-    left: 114px
-    top: 9px
-
-    font-family: Roboto Mono
-    font-style: normal
-    font-weight: bold
-    font-size: 28px
-    line-height: 37px
-
-    color: #DE5499
+    @apply relative w-full
+    @apply flex justify-start items-center
+    height: $height-primary
+    background-color: $color-common
+    padding: $padding-primary
+    >.logo
+        @apply relative text-3xl font-semibold
+        text-decoration: none
+        color: $color-primary
+        font-family: $font-primary

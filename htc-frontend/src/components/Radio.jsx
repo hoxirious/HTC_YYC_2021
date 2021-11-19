@@ -6,7 +6,7 @@ import "styles/components/Radio.sass";
 
 export const Radio = () => {
   const size = {
-    width: "50%",
+    width: "100%",
     height: 300,
   };
   const view = "coverart"; // or 'coverart'
