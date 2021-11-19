@@ -14,24 +14,27 @@
             grid-template-columns: 1fr 2fr
         column-gap $component-common-gap
         .main-content__left
-            @apply flex flex-col justify-center items-center
+            @apply flex flex-col justify-center items-center inline-block
+            margin: $margin-secondary
             grid-column: 1
             >.title
-                @apply text-4xl font-medium
+                @apply font-medium text-4xl text-center
                 @screen md
-                    width: 7rem
+                    @apply text-5xl
+                    width: $button-width
+                margin: $margin-secondary
                 color: #264143
                 font-family: $font-secondary
             >.capture-button
                 @apply flex justify-center items-center
-                @apply text-base border-4 rounded-lg
+                @apply text-base border-4 rounded-lg z-40
                 color: $color-primary
                 font-family: $font-common
                 border-color: $color-primary
                 background-color: transparent
                 width: $button-width
                 height: $button-height-primary
-                z-index: 40
+                margin: $margin-secondary
                 &:hover
                     background-color: $color-common
         .main-content__right
@@ -39,13 +42,14 @@
                 grid-column: 1
             @screen md
                 grid-column: 2
-            @apply flex justify-start
+            @apply flex justify-center items-center
+            margin: $margin-secondary
             >.webcam-container
                 @apply relative box-border
                 @screen sm
                     width: 400px
                     height: 200px
-                @screen lg
+                @screen md
                     width: 600px
                     height: 300px
                 z-index: 40

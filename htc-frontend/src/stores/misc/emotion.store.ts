@@ -2,12 +2,12 @@ import { Emotion } from "data/emotionMapper";
 import { action, Action } from "easy-peasy";
 
 interface EmotionState {
-  emotion: Emotion;
+  emotion: Emotion | null;
   isCapture: boolean;
 }
 
 interface EmotionAction {
-  setEmotion: Action<EmotionModel, Emotion>;
+  setEmotion: Action<EmotionModel, Emotion | null>;
   capture: Action<EmotionModel, void>;
 }
 

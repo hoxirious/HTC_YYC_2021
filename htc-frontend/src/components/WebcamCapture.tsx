@@ -1,5 +1,5 @@
 import { postImage } from "apis/services/lambda-service";
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Webcam from "react-webcam";
 import { useStoreActions, useStoreState } from "stores/StoreFront";
 
@@ -18,14 +18,17 @@ export const WebcamCapture = () => {
     return store.emotionModel;
   });
 
-  const [image, setImage] = useState("");
-  const webcamRef = React.useRef(null);
+  const [image, setImage] = useState<string | null>(null);
+  const webcamRef = React.useRef<Webcam>(null);
 
   const capture = React.useCallback(async () => {
-    const imageSrc = webcamRef.current.getScreenshot();
-    setImage(imageSrc);
-    const result = await postImage(imageSrc);
-    setEmotion(result);
+    if (webcamRef.current) {
+      const imageSrc = webcamRef.current.getScreenshot();
+      setImage(imageSrc);
+      const result = await postImage(imageSrc);
+      if (result)
+        setEmotion(result);
+    }
   }, [webcamRef, setEmotion]);
 
   useEffect(() => {
@@ -36,7 +39,9 @@ export const WebcamCapture = () => {
 
   return (
     <div className="webcam-container">
-      {image === "" ? (
+      {image ? (
+        <img alt="Captured Successfully" src={image} />
+      ) : (
         <Webcam
           audio={false}
           ref={webcamRef}
@@ -45,8 +50,6 @@ export const WebcamCapture = () => {
           screenshotFormat="image/jpeg"
           videoConstraints={videoConstraints}
         />
-      ) : (
-        <img src={image} />
       )}
     </div>
   );
