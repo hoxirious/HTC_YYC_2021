@@ -2,11 +2,11 @@ import { getPlaylist } from "data/emotionMapper";
 import React from "react";
 import SpotifyPlayer from "react-spotify-player";
 import { useStoreState } from "stores/StoreFront";
-import "./Player.sass";
+import "styles/components/Radio.sass";
 
-const Player = () => {
+export const Radio = () => {
   const size = {
-    width: "50%",
+    width: "100%",
     height: 300,
   };
   const view = "coverart"; // or 'coverart'
@@ -29,4 +29,3 @@ const Player = () => {
     </>
   );
 };
-export default Player;
