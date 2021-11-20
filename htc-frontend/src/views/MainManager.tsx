@@ -7,7 +7,6 @@ export const MainManager = () => {
     const capture = useStoreActions(store => {
         return store.emotionModel.capture;
     })
-
     const emotion = useStoreState((store) => {
         return store.emotionModel.emotion;
     });
@@ -28,7 +27,7 @@ export const MainManager = () => {
                 </div>}
             {emotion !== "UNKNOWN" &&
                 <div className="radio-content">
-                    <Radio/>
+                    <Radio />
                 </div>
             }
         </div>
