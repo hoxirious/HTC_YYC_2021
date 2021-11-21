@@ -33,3 +33,7 @@ AWS (Lambda, Rekognition, API Gateway, IAM); Spotify API; Project planning; Plan
 - Refactor backend and cloud services (add SQS/SNS/Cloudwatch to handle notification,concurrency calls, and debugging logs).
 - Implement a more eye catching and responsive UI.
 - Implement video analysis feature and connect with a mobile camera so it can analyze image/video real-time.
+
+## Try it out!
+- Demo: https://moosique-1101.web.app
+- Devpost: https://devpost.com/software/moosique
